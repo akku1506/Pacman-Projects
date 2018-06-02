@@ -1,0 +1,48 @@
+python pacman.py
+python pacman.py --layout testMaze --pacman GoWestAgent
+python pacman.py --layout tinyMaze --pacman GoWestAgent
+python pacman.py -h
+
+python pacman.py -l tinyMaze -p SearchAgent -a fn=tinyMazeSearch
+1.
+
+python pacman.py -l tinyMaze -p SearchAgent
+python pacman.py -l mediumMaze -p SearchAgent
+python pacman.py -l bigMaze -z .5 -p SearchAgent
+
+2.
+python pacman.py -l mediumMaze -p SearchAgent -a fn=bfs
+python pacman.py -l bigMaze -p SearchAgent -a fn=bfs -z .5
+3.
+python eightpuzzle.py
+python pacman.py -l mediumMaze -p SearchAgent -a fn=ucs
+python pacman.py -l mediumDottedMaze -p StayEastSearchAgent
+python pacman.py -l mediumScaryMaze -p StayWestSearchAgent
+4.
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar
+python pacman.py -l bigMaze -z .5 -p SearchAgent -a fn=astar,heuristic=manhattanHeuristic 
+5.
+python pacman.py -l tinyCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+python pacman.py -l mediumCorners -p SearchAgent -a fn=bfs,prob=CornersProblem
+python pacman.py -l mediumCorners -p SearchAgent -a fn=astar,prob=CornersProblem (behaves same as bfs)
+6.
+python pacman.py -l mediumCorners -p SearchAgent -a fn=astar,prob=CornersProblem,heuristic=cornerHeuristic
+python pacman.py -l mediumCorners -p AStarCornersAgent -z 0.5
+python pacman.py -l tinyCorners -p AStarCornersAgent
+7.
+python pacman.py -l testSearch -p AStarFoodSearchAgent
+
+python pacman.py -l trickySearch -p AStarFoodSearchAgent
+
+AstarFoodSearchAgent:
+python pacman.py -l testSearch -p SearchAgent -a fn=ucs,prob=FoodSearchProblem,heuristic=foodHeuristic
+python pacman.py -l testSearch -p SearchAgent -a fn=astar,prob=FoodSearchProblem,heuristic=foodHeuristic
+
+python pacman.py -l trickySearch -p SearchAgent -a fn=ucs,prob=FoodSearchProblem,heuristic=foodHeuristic
+python pacman.py -l trickySearch -p SearchAgent -a fn=astar,prob=FoodSearchProblem,heuristic=foodHeuristic
+
+8.
+python pacman.py -l bigSearch -p ClosestDotSearchAgent -z .5 
+python pacman.py -l bigSearch -p ApproximateSearchAgent -z .5 -q 
+
+
